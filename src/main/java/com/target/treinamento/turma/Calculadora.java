@@ -1,41 +1,70 @@
 package com.target.treinamento.turma;
 
+import java.util.Scanner;
+
 public class Calculadora {
-    public static void main (String[] args) {
+	public static void main(String[] args) {
 
-        Double a = 5.0;
-        Double b = 10.0;
+		Calculadora minhaCalculadora = new Calculadora();
+		
+		
+		Double a = minhaCalculadora.leiaPrimeiraEntrada();
+		Double b = minhaCalculadora.leiaSegundaEntrada();
 
-        Double minhaVariavel = new Calculadora().adiciona(a,b);
-        System.out.println("O resultado da adição = " + minhaVariavel);
+		Double minhaVariavel = minhaCalculadora.adiciona(a, b);
+		System.out.println("O resultado da adição = " + minhaVariavel);
+	}
 
-        Double r_diminui = new Calculadora().diminui(a,b);
-        System.out.println("O resultado da subtração = " + r_diminui);
+	private Double leiaSegundaEntrada() {
+		System.out.println("Informe o segundo número:");
+		
+		return lerEntrada();
+	}
 
-        Double r_divide = new Calculadora().divide(a,b);
-        System.out.println("O resultado da divisão = " +r_divide);
+	
+	private Double lerEntrada() {
+		Scanner scanner = new Scanner(System.in);
+		
+		return scanner.nextDouble();
+	}
+	
+	private Double leiaPrimeiraEntrada() {
+		System.out.println("Informe o primeiro número:");
 
-        Double r_multiplica = new Calculadora().multiplica(a,b);
-        System.out.println("O resultado da multiplicação = " +r_multiplica);
-    }
+		return lerEntrada();
+	}
 
-    private Double adiciona(Double a,Double b){
-        Double resultado = (a+b);
-        return(resultado);
-    }
+	private Double adiciona(Double a, Double b) {
+		
+		if (a > 10) {
+			
+			Double resultado = (a + b);
+			return (resultado);
+			
+		} else if (a < 10 && b < 10) {
+			
+			return 50.0;
+			
+		} else {
+			
+			return 50.0;
+			
+		}
 
-    private Double diminui(Double a,Double b){
-        Double resultado = (a-b);
-        return(resultado);
-    }
+	}
 
-    private Double divide(Double a,Double b){
-        Double resultado = (a/b);
-        return(resultado);
-    }
+	private Double diminui(Double a, Double b) {
+		Double resultado = (a - b);
+		return (resultado);
+	}
 
-    private Double multiplica(Double a,Double b){
-        Double resultado = (a*b);
-        return(resultado);
-    }
+	private Double divide(Double a, Double b) {
+		Double resultado = (a / b);
+		return (resultado);
+	}
+
+	private Double multiplica(Double a, Double b) {
+		Double resultado = (a * b);
+		return (resultado);
+	}
 }
