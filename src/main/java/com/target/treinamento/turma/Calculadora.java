@@ -8,16 +8,46 @@ public class Calculadora {
 		Calculadora minhaCalculadora = new Calculadora();
 		
 		
-		Double a = minhaCalculadora.leiaPrimeiraEntrada();
-		Double b = minhaCalculadora.leiaSegundaEntrada();
+		Double primeiroNumero = minhaCalculadora.leiaPrimeiraEntrada();
+		Double segundoNumero = minhaCalculadora.leiaSegundaEntrada();
+		Integer operacao = minhaCalculadora.leiaOperacao();
 
-		Double minhaVariavel = minhaCalculadora.adiciona(a, b);
-		System.out.println("O resultado da adição = " + minhaVariavel);
+
+		Double resultado = minhaCalculadora.calcula(primeiroNumero, segundoNumero, operacao);
+		System.out.println("O resultado é = " + resultado);
+	}
+
+	private Double calcula(Double primeiroNumero, Double segundoNumero, Integer operacao) {
+		if(operacao == 1){
+
+			return adiciona(primeiroNumero, segundoNumero);
+
+		} else if (operacao == 2) {
+
+			return diminui(primeiroNumero, segundoNumero);
+
+		} else if (operacao == 3) {
+
+			return multiplica(primeiroNumero, segundoNumero);
+
+		} else if (operacao == 4) {
+
+			return divide(primeiroNumero, segundoNumero);
+
+		}
+
+		return -1.0;
+	}
+
+	private Integer leiaOperacao() {
+		System.out.println("Informe a operação desejada:\n1-Adição\n2-Subtração\n3-Multiplicação\n4-Divisão");
+
+		return new Scanner(System.in).nextInt();
 	}
 
 	private Double leiaSegundaEntrada() {
 		System.out.println("Informe o segundo número:");
-		
+
 		return lerEntrada();
 	}
 
@@ -37,9 +67,8 @@ public class Calculadora {
 	private Double adiciona(Double a, Double b) {
 		
 		if (a > 10) {
-			
-			Double resultado = (a + b);
-			return (resultado);
+
+			return a + b;
 			
 		} else if (a < 10 && b < 10) {
 			
@@ -54,17 +83,14 @@ public class Calculadora {
 	}
 
 	private Double diminui(Double a, Double b) {
-		Double resultado = (a - b);
-		return (resultado);
+		return a - b;
 	}
 
 	private Double divide(Double a, Double b) {
-		Double resultado = (a / b);
-		return (resultado);
+		return a / b;
 	}
 
 	private Double multiplica(Double a, Double b) {
-		Double resultado = (a * b);
-		return (resultado);
+		return a * b;
 	}
 }
