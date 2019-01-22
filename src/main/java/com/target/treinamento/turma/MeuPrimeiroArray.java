@@ -16,7 +16,9 @@ public class MeuPrimeiroArray {
 		for (int i = 0; i < 10; i++) {
 			meuArray[i] = lerEntrada();
 		}	
-				
+		
+		imprimeNaTela(meuArray);
+		
 		efetuaOperacao(meuArray);
 		
 		imprimeNaTela(meuArray);
@@ -28,11 +30,15 @@ public class MeuPrimeiroArray {
 		}
 	}
 
+	//[1,1,1,1,1,1,1,1,1,1]
+	// 0 1 2 3 4 5 6 7 8 9
 	private void efetuaOperacao(Double[] meuArray) {
 		for (int i = 0; i < meuArray.length; i++) {
 			meuArray[i] = meuArray[i] * meuArray[i];
 		}
 	}
+	
+
 
 	public Double lerEntrada() {
 		Scanner scanner = new Scanner(System.in);
