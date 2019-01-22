@@ -3,7 +3,7 @@ package com.target.treinamento.turma;
 import java.util.Scanner;
 
 public class Calculadora {
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 
 		Calculadora minhaCalculadora = new Calculadora();
 		
@@ -15,7 +15,7 @@ public class Calculadora {
 
 		Double resultado = minhaCalculadora.calcula(primeiroNumero, segundoNumero, operacao);
 		System.out.println("O resultado é = " + resultado);
-	}
+	}*/
 
 	private Double calcula(Double primeiroNumero, Double segundoNumero, Integer operacao) {
 		if(operacao == 1){
@@ -52,7 +52,7 @@ public class Calculadora {
 	}
 
 	
-	private Double lerEntrada() {
+	public Double lerEntrada() {
 		Scanner scanner = new Scanner(System.in);
 		
 		return scanner.nextDouble();
@@ -64,7 +64,7 @@ public class Calculadora {
 		return lerEntrada();
 	}
 
-	private Double adiciona(Double a, Double b) {
+	public Double adiciona(Double a, Double b) {
 		
 		if (a > 10) {
 
@@ -90,7 +90,19 @@ public class Calculadora {
 		return a / b;
 	}
 
-	private Double multiplica(Double a, Double b) {
+	public Double multiplica(Double a, Double b) {
 		return a * b;
 	}
+	
+	
+	private double meuMetodo(String numero) {
+		try {
+			return Double.valueOf(numero);
+		} catch (Exception e) {
+			System.out.println("só serão aceitos números");
+			return -1;
+		}
+		
+	}
+	
 }
