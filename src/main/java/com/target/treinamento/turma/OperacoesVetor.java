@@ -23,13 +23,27 @@ public class OperacoesVetor {
 	private boolean lerOpcoes() {
 		String opcao = lerEntrada();
 		
-		if(opcao.equals("3")) {
-			System.out.println("Parando a execução do programa.");
-			return false;
-		} else if(opcao.equals("1")) {
-			carregaVetor();
-		} else if (opcao.equals("2")) {
-			listarElementos();
+		switch(opcao) {
+			
+			case "1":
+				
+				carregaVetor();
+				break;
+				
+			case "2":
+				
+				listarElementos();
+				break;
+				
+			case "3":
+				
+				System.out.println("Parando a execução do programa.");
+				return false;
+				
+			default:
+				
+				System.out.println("Opção inválida.");	
+				
 		}
 		
 		return true;
